@@ -1,5 +1,3 @@
-//! Computing the total stoppping time of the Collatz sequence
-//!
 //! The Collatz conjecture states that for the given function:
 //!
 //! f(n) = {

@@ -1,5 +1,3 @@
-//! An API for vectorized computation
-//!
 //! An important performance optimization for array calculations is the use of vector instructions,
 //! i.e. SIMD (https://en.wikipedia.org/wiki/Single_instruction,_multiple_data). Vector instructions
 //! process entire chunks of data, rather than a single piece of data.
@@ -73,27 +71,27 @@ mod test {
   use super::*;
 
   const A: Vec4 = [0., 1., 2., 3.];
-  const B: Vec4 = [4., 5., 6., 7.];
+  const B: Vec4 = [4., 3., 2., 1.];
   const M: Mask4 = [false, false, true, true];
 
   #[test]
   fn test_vec4_add() {
-    assert_eq!(vec4_add(A, B), [4., 6., 8., 10.])
+    assert_eq!(vec4_add(A, B), [4., 4., 4., 4.])
   }
 
   #[test]
   fn test_vec4_mul() {
-    assert_eq!(vec4_mul(A, B), [0., 5., 12., 21.]);
+    assert_eq!(vec4_mul(A, B), [0., 3., 4., 3.]);
   }
 
   #[test]
   fn test_vec4_select() {
-    assert_eq!(vec4_select(M, A, B), [4., 5., 2., 3.]);
+    assert_eq!(vec4_select(M, A, B), [4., 3., 2., 3.]);
   }
 
   #[test]
   fn test_vec4_gt() {
-    assert_eq!(vec4_gt(A, B), [false, false, false, false]);
+    assert_eq!(vec4_gt(A, B), [false, false, false, true]);
   }
 
   #[test]
