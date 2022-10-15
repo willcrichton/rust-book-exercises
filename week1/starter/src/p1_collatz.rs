@@ -25,7 +25,7 @@ pub fn collatz_iterative(n: usize) -> usize {
 #[cfg(test)]
 mod test {
   use super::*;
-  const COLLATZ_ANSWERS: [usize; 10] = [1, 2, 8, 3, 6, 9, 17, 4, 20, 7];
+  const COLLATZ_ANSWERS: [usize; 10] = [0, 1, 7, 2, 5, 8, 16, 3, 19, 6];
 
   #[test]
   fn collatz_recursive_test() {
