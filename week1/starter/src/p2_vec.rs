@@ -42,7 +42,7 @@ pub fn vec4_gt(a: Vec4, b: Vec4) -> Mask4 {
 
 /// Baseline computation written in traditional iterative style.
 pub fn baseline(a: Vec4, b: Vec4) -> Vec4 {
-  let mut c = [0., 0., 0., 0.];
+  let mut c = [0.; 4];
   for i in 0..4 {
     // black_box so the compiler doesn't auto-vectorize this loop :-)
     if black_box(a[i] > b[i]) {

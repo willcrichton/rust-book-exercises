@@ -8,6 +8,9 @@ edition = "2021"
 [dependencies]
 criterion = {version = "0.3", features = ["html_reports"]}
 
+[dev-dependencies]
+rand = "*"
+
 [[bench]]
 name = "p2_vec"
 harness = false
