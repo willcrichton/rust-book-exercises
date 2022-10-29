@@ -1,0 +1,18 @@
+[package]
+name = "week3"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static = "1.4"
+image = {version = "0.24", default-features = false, features = ["jpeg"]}
+criterion = {version = "0.3", features = ["html_reports"]}
+
+[profile.release]
+debug = true
+
+[[bench]]
+name = "p2_img_bench"
+harness = false
