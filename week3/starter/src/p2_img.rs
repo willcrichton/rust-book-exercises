@@ -147,6 +147,9 @@ impl Image {
         energies
     }
 
+    /// Propagates minimal energies down the image.
+    ///
+    /// Increments energies(x, y) by the minimum of its three neighbors above.
     pub fn propagate_energy(&self, energies: &mut Energies) {
         for y in 0..self.height {
             for x in 0..self.width {
@@ -160,6 +163,8 @@ impl Image {
         }
     }
 
+    /// Finds the lowest-energy seam by starting at the bottom, and following the
+    /// smallest adjacent energy values.
     pub fn find_seam(&self, energies: &Energies) -> Vec<usize> {
         let (y_seed, _) = (0..self.width)
             .map(|x| (x, energies[&(x, self.height - 1)]))
