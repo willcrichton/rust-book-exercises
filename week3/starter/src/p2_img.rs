@@ -182,7 +182,6 @@ impl Image {
         min_seam
     }
 
-
     /// Takes a vertical seam as a vector [x_1, ... x_n] of x-values,
     /// and removes it from the image.
     pub fn remove_seam(&self, seam: &[usize]) -> Image {
@@ -232,20 +231,5 @@ impl Image {
             }
         }
         img.save(path)
-    }
-}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-    #[test]
-    fn img_test() {
-        let mut img = Image::load("input.jpg").unwrap();
-
-        for _ in 0..50 {
-            img = img.carve();
-        }
-
-        img.save("output.jpg").unwrap();
     }
 }
