@@ -1,0 +1,12 @@
+[package]
+name = "week6"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+incr-server-test = []
+
+[dependencies]
+tokio = {version = "*", default-features = false, features = ["macros", "rt"]}
